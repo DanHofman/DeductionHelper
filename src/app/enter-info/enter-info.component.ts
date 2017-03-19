@@ -54,6 +54,7 @@ export class EnterInfoComponent  {
 
   submitType(){
     this.deductions.addType(this.typetext);
+    this.typetext = "";
   }
 
   submitDeduction() {
@@ -62,6 +63,10 @@ export class EnterInfoComponent  {
       console.log("description: " + this.text + "\nAmount: " + this.value + "\nType: " + this.selectedType)
       this.deductions.addDeduction(deduction, this.selectedMonth);
       this.reloadData.emit(null);
+      this.text = "";
+      this.value = 0;
+      this.selectedMonth = "all";
+      this.selectedType = "all";
     }
     else {
       alert("Please complete all values");
