@@ -1,0 +1,14 @@
+.main-container {
+    background-color: lightgray;
+    margin: 2% 5% 1% 5%;
+    padding: 30px;
+    box-shadow: 1px 1px 1px grey;
+}
+.active-deductions {
+    list-style: none;
+    min-height: 240px;
+}
+.deductions {
+    border: 1px solid black;
+    margin: 0px 5% 5% 5%;
+}

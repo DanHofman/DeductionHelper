@@ -1,0 +1,37 @@
+<h2 style="text-align: center">Deductions</h2>
+<div class="container-fluid main-container">
+  <div class="row">    
+    <div class="col-md-6 center-block">
+      <label for="Type-of-deduction">Type of deduction</label>
+      <div class="btn-group">
+        <button id="Type-of-deduction" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         {{selectedType}}<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let typ of types" id={{typ}}><a (click)="selectType(typ)" href="#{{typ}}">{{typ}}</a></li> {{typ}}  
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 center-block">
+      <label for="Month-Selection">Month Selection</label>
+      <div class="btn-group">
+        <button id="Month-Selection" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{selectedMonth}}<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let mon of months" id={{mon}}><a (click)="selectMonth(mon)" href="#{{mon}}">{{mon}}</a></li>{{mon}}     
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid deductions">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>{{selectedMonth}}</h3>
+      <ul class="active-deductions">
+        <li *ngFor="let ded of deduction">Type: {{ded.type}} Description: {{ded.description}} Amount: {{ded.amount}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
